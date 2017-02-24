@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 17:51:16 by coleksii          #+#    #+#             */
-/*   Updated: 2017/02/24 20:06:09 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/02/24 20:34:39 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		ft_printf(const char *format, ...)
 				lst->width = va_arg(argptr, int);
 			if (lst->prec == -1)
 				lst->prec = va_arg(argptr, int);
-		//	parametres(lst, &argptr);
+			parametres(lst, &argptr);
 //		printf("flags = %s\n", lst->flags);
 //		printf("width = %d\n", lst->width);
 //		printf("prec = %d\n", lst->prec);

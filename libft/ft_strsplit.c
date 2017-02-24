@@ -6,7 +6,7 @@
 /*   By: rhadiats <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 05:09:52 by rhadiats          #+#    #+#             */
-/*   Updated: 2016/12/20 18:18:26 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/02/24 20:25:57 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,17 +96,4 @@ char	**ft_strsplit(char const *s, char c)
 	tab = array_mallocate(tab, s, c);
 	tab = array_put(tab, s, c);
 	return (tab);
-}
-
-int		main(void)
-{
-	char	**str;
-	char dst[] = "i  abc cd ere";
-	char c = ' ';
-	str = ft_strsplit(dst, c);
-	printf("%s\n", str[0]);
-	printf("%s\n", str[1]);
-	printf("%s\n", str[2]);
-	printf("%s\n", str[3]);
-	return (0);
 }
