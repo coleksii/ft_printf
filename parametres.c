@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 13:02:29 by coleksii          #+#    #+#             */
-/*   Updated: 2017/02/24 20:34:37 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/01 16:45:11 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void function(t_plist *lst, va_list *argptr, int i)
 	fp	farg[10];
 
 	farg[0] = decemical;
+	farg[1] = decemical;
+	farg[3] = u_decemical;
 	farg[i](lst, argptr);
 }
 
@@ -27,9 +29,8 @@ int		parametres(t_plist *lst, va_list *argptr)
 	fp		f_arr[10];
 	int ptr;
 
-	s = "dioumxXcCsaAeEfFgGSpn";
+	s = "dDioumxXcCsaAeEfFgGSpn";
 	i = 0;
-	f_arr[0] = decemical;
 	while (s[i] != '\0')
 	{
 		if (lst->type == s[i])

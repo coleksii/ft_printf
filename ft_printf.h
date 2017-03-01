@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:57:09 by coleksii          #+#    #+#             */
-/*   Updated: 2017/02/24 19:45:07 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/02/28 17:27:45 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ int				correct(char *s, int i, t_plist *lst);
 int     parametres(t_plist *lst, va_list *argptr);
 void    lst_bzero(t_plist *lst);
 char     *decemical(t_plist *lst, va_list *argptr);
+char            *ft_u_itoa(unsigned int n);
+char        *u_decemical(t_plist *lst, va_list *argptr);
 
 #endif
