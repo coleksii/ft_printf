@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 19:28:58 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/01 16:14:05 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/02 16:19:19 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main()
 {
+	int y;
 	double i;
 	unsigned int	d;
 	i = 2.2356569;
@@ -22,5 +23,14 @@ int main()
 	printf("s%x\n", d);
 	ft_printf("\x1b[7;34;43mUkraine\x1b[0m\n");
 	printf("\x1b[5;43mTest\x1b[0m\n");
+
+	ft_printf("%%\n");
+	printf("%5%\n");
+
+	y = printf("%d%d\n", 48, 48);
+	printf("d = %d\n", y);
+	
+	y = ft_printf("%d%d\n", 48, 48);
+	printf("d = %d\n", y);
 	return (0);
 }

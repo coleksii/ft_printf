@@ -6,14 +6,13 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:57:09 by coleksii          #+#    #+#             */
-/*   Updated: 2017/02/28 17:27:45 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/02 16:02:29 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft/libft.h"
 # include <stdarg.h>
 # include <stdio.h>
 # include <unistd.h>
@@ -36,5 +35,8 @@ void    lst_bzero(t_plist *lst);
 char     *decemical(t_plist *lst, va_list *argptr);
 char            *ft_u_itoa(unsigned int n);
 char        *u_decemical(t_plist *lst, va_list *argptr);
+char            *ft_itoa(int n);
+int        ft_putstr(char const *str);
+void        ft_putchar(char c);
 
 #endif
