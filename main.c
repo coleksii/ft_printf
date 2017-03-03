@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 19:28:58 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/02 16:19:19 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/03 14:31:21 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int main()
 	ft_printf("%%\n");
 	printf("%5%\n");
 
-	y = printf("%d%d\n", 48, 48);
+	y = printf("%d%x\n", 48, -106);
 	printf("d = %d\n", y);
 	
-	y = ft_printf("%d%d\n", 48, 48);
-	printf("d = %d\n", y);
+	y = ft_printf("%d%x\n", 48, -106);
+	ft_printf("d = %d\n", y);
 	return (0);
 }
