@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:57:09 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/03 14:11:30 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/05 19:36:31 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef	struct	s_print_list
 	char			size;
 	char			type;
 	char			*str;
+	char			hash;
 }				t_plist;
 typedef	char *(*fp)(t_plist *, va_list *);
 int				ft_printf(const char *format, ...);
@@ -39,7 +40,7 @@ char            *ft_itoa(int n);
 int        ft_putstr(char const *str);
 void        ft_putchar(char c);
 char        *ft_base(t_plist *lst, va_list *argptr);
-char    *ft_itoa_base_big(unsigned int nbr, int base);
-char    *ft_itoa_base_small(unsigned int nbr, int base);
+char    *ft_itoa_base_big(unsigned int nbr, int base, t_plist *lst);
+char    *ft_itoa_base_small(unsigned int nbr, int base, t_plist *lst);
 
 #endif

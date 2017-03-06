@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 17:51:16 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/02 16:19:01 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/05 19:52:32 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		ft_printf(const char *format, ...)
 	lst = (t_plist *)malloc(sizeof(t_plist));
 	i = 0;
 	l = 0;
+	lst->flags = NULL;
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%' && format[i + 1] == '%' && (i += 2) && l++)
@@ -40,7 +41,7 @@ int		ft_printf(const char *format, ...)
 //		printf("width = %d\n", lst->width);
 //		printf("prec = %d\n", lst->prec);
 //		printf("size = %c\n", lst->size);
-//		printf("type = %c\n", lst->type);
+//		printf("hash = %c\n", lst->hash);
 		}
 		else if (++l)
 			write(1, &format[i], 1);

@@ -1,1 +1,1 @@
-make re && gcc main.c libftprintf.a
+make re && make clean && gcc main.c libftprintf.a
