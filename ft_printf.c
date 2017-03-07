@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 17:51:16 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/06 16:59:07 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/07 16:48:55 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int		ft_printf(const char *format, ...)
 	lst = (t_plist *)malloc(sizeof(t_plist));
 	i = 0;
 	l = 0;
-	lst->flags = NULL;
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%' && (k = correct((char *)format, i, lst)))

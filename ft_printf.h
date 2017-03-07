@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:57:09 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/05 19:36:31 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/07 17:33:54 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,17 @@
 
 typedef	struct	s_print_list
 {
-	char			*flags;
 	int				width;
 	int				prec;
 	char			size;
 	char			type;
 	char			*str;
 	char			hash;
+	char			plus;
+	char			minus;
+	char			nul;
 }				t_plist;
-typedef	char *(*fp)(t_plist *, va_list *);
+typedef	char *(*t_p)(t_plist *, va_list *);
 int				ft_printf(const char *format, ...);
 int				correct(char *s, int i, t_plist *lst);
 int     parametres(t_plist *lst, va_list *argptr);

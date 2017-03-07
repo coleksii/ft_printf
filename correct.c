@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 18:00:57 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/06 16:13:48 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/07 17:33:55 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,21 @@
 
 int		flags(char *s, t_plist *lst)
 {
-	char *tmp;
 	int	i;
-	i = 0;
-	while (s[i] == '-' || s[i] == '+' || s[i] == ' ' || s[i] == '#' || s[i] == '0')
-		i++;
-	tmp = (char *)malloc(i + 1);
+
 	i = 0;
 	while (s[i] == '-' || s[i] == '+' || s[i] == ' ' || s[i] == '#' || s[i] == '0')
 	{
 		if (s[i] == '#')
 			lst->hash = '#';
-		tmp[i] = s[i];
+		if (s[i] == '-')
+			lst->minus = '-';
+		if (s[i] == '+')
+			lst->plus = '+';
+		if (s[i] == '0')
+			lst->nul = 'Y';
 		i++;
 	}
-	tmp[i] = '\0';
-	lst->flags = tmp;
 	return(i);
 }
 
