@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 13:02:29 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/07 16:32:24 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/09 14:23:56 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void function(t_plist *lst, va_list *argptr, int i)
 {
-	t_p	farg[10];
+	t_p	farg[20];
 
 	farg[0] = decemical;
 	farg[1] = decemical;
@@ -23,6 +23,9 @@ void function(t_plist *lst, va_list *argptr, int i)
 	farg[4] = u_decemical;
 	farg[6] = ft_base;
 	farg[7] = ft_base;
+	farg[8] = fft_putchar;
+	farg[9] = fft_putchar;
+	farg[10] = fft_putstr;
 	farg[i](lst, argptr);
 }
 
@@ -49,6 +52,7 @@ int		parametres(t_plist *lst, va_list *argptr)
 		}
 		function(lst, argptr, i);
 	}
-	i = ft_putstr(lst->str);
+//	i = ft_putstr(lst->str);
+	i = printable(lst);
 	return (i);
 }

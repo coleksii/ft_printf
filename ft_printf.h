@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:57:09 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/07 17:33:54 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/07 22:24:23 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,9 @@ void        ft_putchar(char c);
 char        *ft_base(t_plist *lst, va_list *argptr);
 char    *ft_itoa_base_big(unsigned int nbr, int base, t_plist *lst);
 char    *ft_itoa_base_small(unsigned int nbr, int base, t_plist *lst);
+char	*fft_putchar(t_plist *lst, va_list *argptr);
+char	*fft_putstr(t_plist *lst, va_list *argptr);
+int     printable(t_plist *lst);
+int		ft_strlen(char *str);
 
 #endif

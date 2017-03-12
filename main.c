@@ -6,9 +6,11 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 19:28:58 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/07 17:57:15 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/09 15:28:57 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+# define UKRAINE ft_printf("\x1b[7;34;43mUkraine\x1b[0m\n");
+# define FLAG	printf("\x1b[6;34;43m  Test \x1b[0m\n");
 
 #include "ft_printf.h"
 
@@ -19,18 +21,16 @@ int main()
 	unsigned int	d;
 	i = 2.2356569;
 	d = 499;
-	
-	ft_printf("s%5%\n", d);
-	ft_printf("\x1b[7;34;43mUkraine\x1b[0m\n");
-	printf("\x1b[5;43mTest\x1b[0m\n");
+	UKRAINE FLAG
 
-	ft_printf("%%\n");
-	printf("%5%\n");
+ 	y = ft_printf("%d%10.9d%d\n", 77777, -12345, 77777);
+	ft_printf("%d\n", y);
+	y = printf("%d%10.9d%d\n", 77777, -12345, 77777);
+	printf("%d\n", y);
 
-	y = printf("%d%o\n", 48, -106);
-	printf("d = %d\n", y);
-	
-	y = printf("iii1%d   %####5.5x\n", 48, -106);
-	ft_printf("d = %d\n", y);
+ 	y = ft_printf("%d%10.9s%d\n", 77777, "12345", 77777);
+	ft_printf("%d\n", y);
+	y = printf("%d%10.9s%d\n", 77777, "12345", 77777);
+	printf("%d\n", y);
 	return (0);
 }
