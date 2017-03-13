@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 12:56:20 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/05 16:40:18 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/12 18:42:14 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char		*decemical(t_plist *lst, va_list *argptr)
 {
-	lst->str = ft_itoa(va_arg(*argptr, int));
+	lst->str = ft_itoa(va_arg(*argptr, int), lst);
 	return (NULL);
 }
 

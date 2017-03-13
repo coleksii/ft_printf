@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/07 18:17:51 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/07 19:30:06 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/13 17:17:27 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ char		*fft_putchar(t_plist *lst, va_list *argptr)
 char		*fft_putstr(t_plist *lst, va_list *argptr)
 {
 	lst->str = va_arg(*argptr, char *);
+	if (lst->str == NULL)
+		lst->str = "(null)";
 	return (NULL);
 }
