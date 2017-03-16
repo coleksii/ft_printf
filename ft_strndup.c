@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fft.c                                              :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/07 18:17:51 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/14 16:48:54 by coleksii         ###   ########.fr       */
+/*   Created: 2016/11/30 13:41:29 by coleksii          #+#    #+#             */
+/*   Updated: 2017/03/13 19:31:31 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char		*fft_putchar(t_plist *lst, va_list *argptr)
+char	*ft_strndup(const char *s1, size_t n)
 {
-	char *s;
+	char	*str1;
+	size_t	i;
 
-	s = (char *)malloc(2);
-	s[0] = va_arg(*argptr, int);
-	s[1] = '\0';
-	lst->str = s;
-	return (NULL);
-}
-
-char		*fft_putstr(t_plist *lst, va_list *argptr)
-{
-	char *s;
-
-	s = va_arg(*argptr, char *);
-	if (lst->prec != -2 && s != NULL)
-		lst->str = ft_strndup(s, lst->prec);
-	else
-		lst->str = s;
-	if (lst->str == NULL)
-		lst->str = "(null)";
-	return (NULL);
+	i = 0;
+	str1 = malloc(sizeof(char) * n + 1);
+	if (!str1)
+		return (0);
+	while (n > 0)
+	{
+		str1[i] = s1[i];
+		i++;
+		n--;
+	}
+	str1[i] = '\0';
+	return (str1);
 }
