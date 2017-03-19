@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 13:46:03 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/15 17:12:34 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/18 17:19:46 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char    *ft_itoa_base_big(unsigned long int nbr, int base, t_plist *lst)
 	if (lst->hash && (lst->type == 'x' || lst->type == 'X'))
 		i += 2;
 	no = (char *)malloc(i + pre + 1);
-	if (lst->hash && (no[1] = 'x'))
+	if (lst->hash && (no[1] = 'X'))
 		no[0] = 48;	
 	if (nbr == 0)
 		*no = 48;

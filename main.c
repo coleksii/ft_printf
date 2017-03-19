@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 19:28:58 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/15 17:16:48 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/19 19:06:37 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 # define UKRAINE {\
@@ -27,14 +27,14 @@ int main()
 	UKRAINE
 
 
- 	y = ft_printf("%d%#20.0x%d\n", 77777, -12345, 77777);
+ 	y = ft_printf("%d%#c%d\n", 77777, 97, 77777);
 	ft_printf("%d\n", y);
-	y = printf("%d%#20.0x%d\n", 77777, -12345, 77777);
+	y = printf("%d%#C%d\n", 77777,  97, 77777);
 	printf("%d\n", y);
 
- 	y = ft_printf("%d %07.4x %d\n", 77777, NULL, 77777);
+ 	y = ft_printf("%d %#07.4X %d\n", 77777, d, 77777);
 	ft_printf("%d\n", y);
-	y = printf("%d %07.4x %d\n", 77777, NULL, 77777);
+	y = printf("%d %#07.4X %d\n", 77777, d, 77777);
 	printf("%d\n", y);
 	return (0);
 }
