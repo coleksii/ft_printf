@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 13:46:03 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/20 16:40:40 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/20 17:21:46 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,11 @@ char    *ft_itoa_base_small(unsigned long int nbr, int base, t_plist *lst)
 	return (no);
 }
 
-char    *ft_itoa_base_p(unsigned long int nbr, int base, t_plist *lst)
+char    *ft_itoa_base_p(unsigned long int nbr, unsigned int base, t_plist *lst)
 {
-	long int    n;
+	unsigned long int    n;
 	int         i;
-	long int    l;
+	unsigned long int    l;
 	char        *no;
 	int			pre;
 
