@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 12:56:20 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/16 16:14:10 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/20 16:42:02 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char		*ft_base(t_plist *lst, va_list *argptr)
 		lst->str = ft_itoa_base_big(va_arg(*argptr, unsigned int), 16, lst);
 	else if (lst->type == 'x')
 		lst->str = ft_itoa_base_small(va_arg(*argptr, unsigned int), 16, lst);
+	else if (lst->type == 'O')
+		lst->str = ft_itoa_base_big(va_arg(*argptr, unsigned int), 8, lst);
 	else if (lst->type == 'o')
 		lst->str = ft_itoa_base_small(va_arg(*argptr, unsigned int), 8, lst);
 	else if (lst->type == 'p')
