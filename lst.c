@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 20:13:26 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/18 17:59:32 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/20 18:21:15 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,6 @@ void	lst_bzero(t_plist *lst)
 	lst->plus = 0;
 	lst->minus = 0;
 	lst->nul = 0;
+	lst->space = 0;
+	lst->negative = 0;
 }

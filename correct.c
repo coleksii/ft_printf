@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 18:00:57 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/20 16:44:11 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/20 19:06:15 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ int		flags(char *s, t_plist *lst)
 		if (s[i] == '+')
 			lst->plus = '+';
 		if (s[i] == '0')
-			lst->nul = 'Y';
+			lst->nul = '+';
+		if (s[i] == ' ')
+			lst->space = 1;
 		i++;
 	}
 	return(i);
