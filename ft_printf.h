@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:57:09 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/20 17:27:50 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/20 18:20:58 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef	struct	s_print_list
 	char			plus;
 	char			minus;
 	char			nul;
+	int				space;
+	int				negative;
 }				t_plist;
 typedef	char *(*t_p)(t_plist *, va_list *);
 int				ft_printf(const char *format, ...);
