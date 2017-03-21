@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 18:00:57 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/21 15:18:23 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/21 15:20:29 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ int		width(char *s, t_plist *lst)
 		return (1);
 	while (s[i] >= 47 && s[i] < 58)
 		lst->width = (lst->width * 10) + (s[i++] - 48);
-	lst->nul = 0; //если есть точность то флаг ноль не обрабатывает
 	return (i);	
 }
 
@@ -59,6 +58,7 @@ int		preci(char *s, t_plist *lst)
 		return (2);
 	while (s[i] >= 47 && s[i] < 58)
 		lst->prec = (lst->prec * 10) + (s[i++] - 48);
+	lst->nul = 0; //если есть точность то флаг ноль не обрабатывает
 	return (i);
 }
 
