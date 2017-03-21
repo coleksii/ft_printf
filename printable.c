@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/07 21:39:08 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/20 18:59:19 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/20 19:28:28 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int 	printable(t_plist *lst)
 	{
 		k += ft_putstr(lst->str);
 		while (lst->width-- - i > 0 && ++k)
-			write(1, &l, 1);
+			write(1, " ", 1);
 	}
 	else
 	{
