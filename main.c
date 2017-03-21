@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 19:28:58 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/20 20:13:34 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/21 15:13:10 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 # define UKRAINE {\
@@ -29,9 +29,9 @@ int main()
 	UKRAINE
 
 	setlocale(LC_ALL, "en_US.UTF-8");
- 	y = ft_printf("%d  %+ 3i  %d\n",77777, 10, 77777);
+ 	y = ft_printf("%d  % 4.5i  %d\n",77777, 42, 77777);
 	ft_printf("%d\n", y);
-	y = printf("%d  % +3i  %d\n", 77777, 10, 77777);
+	y = printf("%d  % 4.5i  %d\n", 77777, 42, 77777);
 	printf("%d\n", y);
 
  	y = ft_printf("%d %#07.4X %d\n", 77777, d, 77777);
