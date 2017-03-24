@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:57:09 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/20 18:20:58 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/22 17:02:28 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int				correct(char *s, int i, t_plist *lst);
 int     parametres(t_plist *lst, va_list *argptr);
 void    lst_bzero(t_plist *lst);
 char     *decemical(t_plist *lst, va_list *argptr);
-char            *ft_u_itoa(unsigned int n);
+char            *ft_u_itoa(unsigned int n, t_plist *lst);
 char        *u_decemical(t_plist *lst, va_list *argptr);
 char            *ft_itoa(int n, t_plist *lst);
 int        ft_putstr(char const *str);
@@ -52,5 +52,6 @@ int     printable(t_plist *lst);
 int		ft_strlen(char *str);
 char    *ft_strndup(const char *s1, size_t n);
 char    *ft_itoa_base_p(unsigned long int nbr, unsigned int base, t_plist *lst);
+int     large(char *s, int *i, t_plist *lst);
 
 #endif

@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pustr.c                                         :+:      :+:    :+:   */
+/*   correct2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/31 13:02:24 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/22 16:15:28 by coleksii         ###   ########.fr       */
+/*   Created: 2017/03/21 16:42:57 by coleksii          #+#    #+#             */
+/*   Updated: 2017/03/21 17:11:56 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putstr(char const *str)
+int		large(char *s, int *i, t_plist *lst)
 {
-	int		i;
+	if ((s[*i] == 'l' && s[*i + 1] == 'l') && (lst->size = 'T'))
+		*i += 2;
+	else if ((s[*i] == 'h' && s[*i + 1] == 'h') && (lst->size = 'H'))
+		*i += 2;
+	else if ((s[*i] == 'l' || s[*i] == 'h' || s[*i] == 'j' || s[*i] == 'z'
+				|| s[*i] == 't' || s[*i] == 'L') && (lst->size = s[*i]))
+		++*i;
+	return (*i);
 
-	i = 0;
-	if (str)
-	{
-		while (str[i] != '\0')
-		{
-			ft_putchar(str[i]);
-			i++;
-		}
-	}
-	return (i);
 }

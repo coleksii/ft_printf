@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 13:46:03 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/20 17:28:11 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/22 16:59:48 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ char    *ft_itoa_base_big(unsigned long int nbr, int base, t_plist *lst)
 	pre = (pre >= 0) ? pre : 0;
 	if (lst->hash && (lst->type == 'X' || lst->type == 'O') && nbr)
 		i += (lst->type == 'X') ? 2 : 1;
+	if (((lst->hash && lst->type == 'X') || lst->type == 'p') && lst->nul && !lst->minus)
+		pre += lst->width - pre - i;
+	if (lst->hash && lst->type == 'O' && lst->prec > l)
+		pre--;
 	no = (char *)malloc(i + pre + 1);
 	if (lst->hash && (lst->type == 'X' || lst->type == 'O') && (no[1] = 'X'))
 		no[0] = 48;	
@@ -61,7 +65,11 @@ char    *ft_itoa_base_small(unsigned long int nbr, int base, t_plist *lst)
 	pre = lst->prec - i;
 	pre = (pre >= 0) ? pre : 0;
 	if (lst->hash && (lst->type == 'x' || lst->type == 'o') && nbr)
-		i += (lst->type == 'x') ? 2 : 1;
+		i += (lst->type == 'o') ? 1 : 2;
+	if (lst->hash && lst->type == 'o' && lst->prec > l)
+		pre--;
+	if (((lst->hash && lst->type == 'x') || lst->type == 'p') && lst->nul && !lst->minus)
+		pre += lst->width - pre - i;
 	no = (char *)malloc(i + pre + 1);
 	if (lst->hash && (lst->type == 'x' || lst->type == 'o') && (no[1] = 'x'))
 		no[0] = 48;	
@@ -94,6 +102,8 @@ char    *ft_itoa_base_p(unsigned long int nbr, unsigned int base, t_plist *lst)
 	pre = lst->prec - i;
 	pre = (pre >= 0) ? pre : 0;
 	i += 2;
+	if (lst->nul && !lst->minus)
+		pre += lst->width - pre - i;
 	no = (char *)malloc(i + pre + 1);
 	if ((no[1] = 'x') && (no[0] = 48) && nbr == 0)
 		no[2] = 48;

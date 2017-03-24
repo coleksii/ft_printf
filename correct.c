@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 18:00:57 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/21 15:20:29 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/21 18:21:10 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,6 @@ int		preci(char *s, t_plist *lst)
 
 int		type(char *s, int *i, t_plist *lst)
 {
-	if ((s[*i] == 'l' && s[*i + 1] == 'l') && (lst->size = 'T'))
-		*i += 2;
-	else if ((s[*i] == 'h' && s[*i + 1] == 'h') && (lst->size = 'H'))
-		*i += 2;
-	else if ((s[*i] == 'l' || s[*i] == 'h' || s[*i] == 'j' || s[*i] == 'z'
-			|| s[*i] == 't' || s[*i] == 'L') && (lst->size = s[*i]))
-		++*i;
 	if ((s[*i] == 'd' || s[*i] == 'i' || s[*i] == 'o' || s[*i] == 'u' ||
 			s[*i] == 'm' || s[*i] == 'x' || s[*i] == 'X' || s[*i] == 'c' ||
 		   	s[*i] == 'C' || s[*i] == 's' || s[*i] == 'a' || s[*i] == 'A' ||
@@ -82,10 +75,16 @@ int		type(char *s, int *i, t_plist *lst)
 	return (0);
 }
 
-int 	correct(char *s, int i, t_plist *lst)
+int 	correct(char *s, int i, t_plist *lst) // к хуям неправилно работает
 {
+	int t;
+
+	t = i;
 	i++;
 	lst_bzero(lst);
+	while (t < i)
+	{
+		t = i;
 	if (s[i] == '-' || s[i] == '+' || s[i] == ' ' || s[i] == '#' || s[i] == '0')
 		i += flags(&s[i], lst);
 	if ((s[i] > 47 && s[i] < 58) || s[i] == '*')
@@ -94,6 +93,8 @@ int 	correct(char *s, int i, t_plist *lst)
 		i += preci(&s[i], lst);
 	else if (s[i] == '.')
 		return (0);
+	large(s, &i, lst);
+	}
 	if (type(s, &i, lst))
 		return (i);
 	return (0);
