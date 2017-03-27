@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 19:28:58 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/22 17:12:39 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/27 14:05:42 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 # define UKRAINE {\
@@ -14,7 +14,7 @@
 	printf("\x1b[6;34;43m  Test \x1b[0m\n");\
 }
 #include <locale.h>
-
+#include <limits.h>
 #include "ft_printf.h"
 
 int main()
@@ -29,9 +29,14 @@ int main()
 	UKRAINE
 
 	setlocale(LC_ALL, "en_US.UTF-8");
- 	y = ft_printf("%d  %.5u  %d\n",77777, 25, 77777);
+ 	y = ft_printf("%d  %20.8jX  %d\n",77777, 4, 77777);
 	ft_printf("%d\n", y);
-	y = printf("%d  %.5u  %d\n", 77777, 25, 77777);
+	y = printf("%d  %20.8jX  %d\n", 77777, 4, 77777);
+	printf("%d\n", y);
+
+ 	y = ft_printf("%d  %x  %d\n",77777, 1, 77777);
+	ft_printf("%d\n", y);
+	y = printf("%d  %x  %d\n", 77777, 1, 77777);
 	printf("%d\n", y);
 
  	y = ft_printf("%d %07 %d%d\n", 77777, d, 77777);

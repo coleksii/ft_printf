@@ -6,20 +6,19 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 14:12:26 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/22 17:12:31 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/26 19:12:26 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char		*plus(unsigned long int n, t_plist *lst)
+char		*plus(uintmax_t n, t_plist *lst)
 {
 	long int			i;
-	unsigned long int		l;
+	uintmax_t		l;
 	char		*str;
 	int		pre;
 
-	
 	l = n;
 	i = 0;
 	while (++i && l >= 10)
@@ -39,10 +38,10 @@ static char		*plus(unsigned long int n, t_plist *lst)
 	return (str);
 }
 
-char			*ft_u_itoa(unsigned int n, t_plist *lst)
+char			*ft_u_itoa(uintmax_t n, t_plist *lst)
 {
 	char		*str;
-	unsigned long int	l;
+	uintmax_t	l;
 
 	l = n;
 	str = plus(l, lst);
