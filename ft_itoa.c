@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 14:12:26 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/24 17:43:24 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/27 16:56:32 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ static char		*plus(intmax_t n, t_plist *lst)
 	i += (lst->plus || lst->space) ? 1 : 0;
 	str = (char *)malloc(i + pre + 2);
 	str[i + pre + 1] = '\0';
-	while (i >= 0 && (str[i-- + pre] = n % 10 + '0'))
+	if (n == 0 && !lst->prec)
+		str[i] = '\0';
+	else while (i >= 0 && (str[i-- + pre] = n % 10 + '0'))
 		n = n / 10;
 	i = 0;
 	l = '+';

@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:57:09 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/26 19:30:54 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/27 19:46:33 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ typedef	struct	s_print_list
 }				t_plist;
 typedef	char *(*t_p)(t_plist *, va_list *);
 int				ft_printf(const char *format, ...);
-int				correct(char *s, int i, t_plist *lst);
+int				correct(char *s, int i, t_plist *lst, va_list *argptr);
 int     parametres(t_plist *lst, va_list *argptr);
 void    lst_bzero(t_plist *lst);
 char     *decemical(t_plist *lst, va_list *argptr);
 char            *ft_u_itoa(uintmax_t n, t_plist *lst);
 char        *u_decemical(t_plist *lst, va_list *argptr);
 char            *ft_itoa(long int n, t_plist *lst);
-int        ft_putstr(char const *str);
+int        ft_putstr(char const *str, t_plist *lst);
 void        ft_putchar(char c);
 char        *ft_base(t_plist *lst, va_list *argptr);
 char    *ft_itoa_base_big(uintmax_t nbr, unsigned int base, t_plist *lst);
