@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 12:56:20 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/27 20:30:00 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/28 17:57:26 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ char		*ft_base(t_plist *lst, va_list *argptr)
 	else if (lst->size == 'T')
 		lst->str = ft_itoa_base_big(va_arg(*argptr, unsigned long long int), 16, lst);
 	else if (lst->size == 'h')
-		lst->str = ft_itoa_base_big((short)va_arg(*argptr, unsigned int), 16, lst);
+		lst->str = ft_itoa_base_big((unsigned short)va_arg(*argptr, int), 16, lst);
 	else if (lst->size == 'H')
-		lst->str = ft_itoa_base_big((char)va_arg(*argptr, unsigned int), 16, lst);
+		lst->str = ft_itoa_base_big((unsigned char)va_arg(*argptr, int), 16, lst);
 	else if (lst->size == 'j')
 		lst->str = ft_itoa_base_big(va_arg(*argptr, uintmax_t), 16, lst);
 	else if (lst->size == 'z')
@@ -107,9 +107,9 @@ char		*ft_base_o(t_plist *lst, va_list *argptr)
 	else if (lst->size == 'T')
 		lst->str = ft_itoa_base_o(va_arg(*argptr, unsigned long long int), 8, lst);
 	else if (lst->size == 'h')
-		lst->str = ft_itoa_base_o((short)va_arg(*argptr, unsigned int), 8, lst);
+		lst->str = ft_itoa_base_o((unsigned short)va_arg(*argptr, int), 8, lst);
 	else if (lst->size == 'H')
-		lst->str = ft_itoa_base_o((char)va_arg(*argptr, unsigned int), 8, lst);
+		lst->str = ft_itoa_base_o((unsigned char)va_arg(*argptr, int), 8, lst);
 	else if (lst->size == 'j')
 		lst->str = ft_itoa_base_o(va_arg(*argptr, uintmax_t), 8, lst);
 	else if (lst->size == 'z')

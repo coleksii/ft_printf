@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 19:28:58 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/27 20:28:19 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/29 19:15:19 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 # define UKRAINE {\
@@ -28,22 +28,9 @@ int main()
 	o = 0x7ffc2f868ee0;
 	UKRAINE
 
-	ft_printf("%o, %ho, %hho\n", -42, -42, -42);
-	printf("%o, %ho, %hho\n", -42, -42, -42);
-	setlocale(LC_ALL, "en_US.UTF-8");
- 	y = ft_printf("%d  %*3d  %d\n",77777, 5, 0, 1, 77777);
-	ft_printf("%d\n", y);
-	y = printf("%d  %jd %d\n",77777, L"𓅷", 77777);
-	printf("%d\n", y);
-
- 	y = ft_printf("%d  %x  %d\n",77777, 1, 77777);
-	ft_printf("%d\n", y);
-	y = printf("%d  %x  %d\n", 77777, 1, 77777);
-	printf("%d\n", y);
-
- 	y = ft_printf("%d %07 %d%d\n", 77777, d, 77777);
-	ft_printf("%d\n", y);
-	y = printf("%d %07 %d%d\n", 77777, d, 77777);
-	printf("%d\n", y);
+	y = printf("{%3*c}", 0, 0);
+	printf("\norigin = %d\n", y);
+	y = ft_printf("{%3*c}", 0, 0);
+	printf("\nmy = %d\n", y);
 	return (0);
 }

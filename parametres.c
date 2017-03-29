@@ -6,13 +6,13 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 13:02:29 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/26 18:39:45 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/29 18:27:42 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void function(t_plist *lst, va_list *argptr, int i)
+void	function(t_plist *lst, va_list *argptr, int i)
 {
 	t_p	farg[24];
 
@@ -37,15 +37,19 @@ int		parametres(t_plist *lst, va_list *argptr)
 {
 	int		i;
 	char	*s;
-
+	
 	s = "dDioumxXcCsaAeEfFgUSpniO";
 	i = 0;
+	if (lst->prec != -2  && (lst->type != 'c' && lst->type != 'C'))
+	   lst->nul = 0;
 	if (lst->type == '%')
 	{
 		lst->str = (char *)malloc(2);
 		lst->str[0] = '%';
 		lst->str[1] = '\0';
 	}
+	else if (lst->type == 'h' && (lst->str = (char *)malloc(1)))
+		lst->str[0] = '\0';
 	else
 	{
 		while (s[i] != '\0')
@@ -56,7 +60,6 @@ int		parametres(t_plist *lst, va_list *argptr)
 		}
 		function(lst, argptr, i);
 	}
-//	i = ft_putstr(lst->str);
 	i = printable(lst);
 	return (i);
 }

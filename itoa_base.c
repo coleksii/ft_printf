@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 13:46:03 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/27 14:05:54 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/28 18:35:24 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,8 @@ char    *ft_itoa_base_p(unsigned long int nbr, unsigned int base, t_plist *lst)
 	if (lst->nul && !lst->minus)
 		pre += (lst->width - pre - i > 0) ? lst->width - pre - i : 0;
 	no = (char *)malloc(i + pre + 1);
-	if ((no[1] = 'x') && (no[0] = 48) && nbr == 0)
+	no[0] = 48;
+	if ((no[1] = 'x') && nbr == 0 && lst->prec)
 		no[2] = 48;
 	no[i + pre] = '\0';
 	while (n)

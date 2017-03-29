@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/07 21:39:08 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/27 16:10:09 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/29 18:11:14 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int		printable(t_plist *lst)
 	char	l;
 
 	k = 0;
-	if (lst->type == 'c' && *(lst->str) == '\0')
+	if ((lst->type == 'c' || lst->type == 'C') && *(lst->str) == '\0')
 		lst->width--;
-	if (lst->nul && lst->prec == -2)
+	if (lst->nul)
 		l = 48;
 	else
 		l = ' ';

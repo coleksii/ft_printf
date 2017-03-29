@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 18:00:57 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/27 19:54:02 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/29 19:17:03 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,11 @@ int		width(char *s, t_plist *lst, va_list *argptr)
 
 	lst->width = 0;
 	i = 0;
-	if (s[i] == '*' && (lst->width = va_arg(*argptr, int)))
+	if (s[i] == '*')
+	{
+		lst->width = va_arg(*argptr, int);
 		return (1);
+	}
 	while (s[i] >= 47 && s[i] < 58)
 		lst->width = (lst->width * 10) + (s[i++] - 48);
 	return (i);	
@@ -60,7 +63,7 @@ int		preci(char *s, t_plist *lst, va_list *argptr)
 		return (1);
 	while (s[i] >= 47 && s[i] < 58)
 		lst->prec = (lst->prec * 10) + (s[i++] - 48);
-	lst->nul = 0; //если есть точность то флаг ноль не обрабатывает
+//	lst->nul = 0; //если есть точность то флаг ноль не обрабатывает
 	return (i);
 }
 
@@ -74,6 +77,8 @@ int		type(char *s, int *i, t_plist *lst)
 			s[*i] == 'n' || s[*i] == 'D' || s[*i] == '%' || s[*i] == 'O' ||
 			(s[*i] == 'U' && (lst->size = 'l'))) && (lst->type = s[*i]))
 		return (++*i);
+	else if ((lst->type = 'h'))
+		return (*i);
 	return (0);
 }
 
@@ -91,11 +96,10 @@ int 	correct(char *s, int i, t_plist *lst, va_list *argptr) // к хуям не�
 		i += flags(&s[i], lst);
 	if ((s[i] > 47 && s[i] < 58) || s[i] == '*')
 		i += width(&s[i], lst, argptr);
-	if ((s[i] == '.') || (s[i + 1] == '*'))
+	if (s[i] == '.')
 		i += preci(&s[i], lst, argptr);
 	large(s, &i, lst);
 	}
-	if (type(s, &i, lst))
-		return (i);
-	return (0);
+	type(s, &i, lst);
+	return (i - 1);
 }

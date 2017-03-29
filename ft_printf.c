@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 17:51:16 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/27 20:01:12 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/29 18:36:20 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int		ft_printf(const char *format, ...)
 {
 	va_list argptr;
 	int		i;
-	int		k;
 	int		l;
 	t_plist	*lst;
 
@@ -26,9 +25,9 @@ int		ft_printf(const char *format, ...)
 	l = 0;
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%' && (k = correct((char *)format, i, lst, &argptr)))
+		if (format[i] == '%')
 		{
-			i = k - 1;
+			i = correct((char *)format, i, lst, &argptr);
 			l = l +	parametres(lst, &argptr);
 //		printf("flags = %s\n", lst->flags);
 //		printf("width = %d\n", lst->width);
@@ -36,8 +35,13 @@ int		ft_printf(const char *format, ...)
 //		printf("size = %c\n", lst->size);
 //		printf("hash = %c\n", lst->hash);
 		}
-		else if (++l)
-			write(1, &format[i], 1);
+//		else if (format[i] == '%')
+//			i++;
+		else 
+		{	
+			if (++l)
+				write(1, &format[i], 1);
+		}
 		i++;
 	}
 	va_end(argptr);

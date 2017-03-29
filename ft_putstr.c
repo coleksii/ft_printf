@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 13:02:24 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/27 16:10:16 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/29 15:22:05 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_putstr(char const *str, t_plist *lst)
 	int		i;
 
 	i = 0;
-	if (*str == '\0' && lst->type == 'c')
+	if (*str == '\0' && (lst->type == 'c' || lst->type == 'C'))
 		return (1);
 	if (str)
 	{
