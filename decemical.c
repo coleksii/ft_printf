@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 12:56:20 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/28 17:57:26 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/29 19:20:46 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ char		*u_decemical(t_plist *lst, va_list *argptr)
 	else if (lst->size == 'T')
 		lst->str = ft_u_itoa(va_arg(*argptr, unsigned long long int), lst);
 	else if (lst->size == 'h')
-		lst->str = ft_u_itoa((short)va_arg(*argptr, unsigned int), lst);
+		lst->str = ft_u_itoa((unsigned short)va_arg(*argptr, unsigned int), lst);
 	else if (lst->size == 'H')
-		lst->str = ft_u_itoa((char)va_arg(*argptr, unsigned int), lst);
+		lst->str = ft_u_itoa((unsigned char)va_arg(*argptr, unsigned int), lst);
 	else if (lst->size == 'j')
 		lst->str = ft_u_itoa(va_arg(*argptr, uintmax_t), lst);
 	else if (lst->size == 'z')
