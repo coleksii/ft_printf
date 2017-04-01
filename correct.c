@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 18:00:57 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/29 19:17:03 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/30 16:56:14 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,12 @@ int		width(char *s, t_plist *lst, va_list *argptr)
 	i = 0;
 	if (s[i] == '*')
 	{
-		lst->width = va_arg(*argptr, int);
+		lst->width = va_arg(*argptr, unsigned int);
+		if (lst->width < 0)
+		{
+			lst->width *= -1;
+			lst->minus = '-';
+		}
 		return (1);
 	}
 	while (s[i] >= 47 && s[i] < 58)
@@ -57,8 +62,13 @@ int		preci(char *s, t_plist *lst, va_list *argptr)
 	i = 1;
 	lst->prec = 0;
 	i = 1;
-	if (s[i] == '*' && (lst->prec = va_arg(*argptr, int)))
+	if (s[i] == '*')
+	{
+		lst->prec = va_arg(*argptr, unsigned int);
+		if (lst->prec < 0)
+			lst->prec *= -1;
 		return (2);
+	}
 	if (s[i] < 47 && s[i] >= 58 && (lst->prec = 0))
 		return (1);
 	while (s[i] >= 47 && s[i] < 58)
@@ -74,8 +84,8 @@ int		type(char *s, int *i, t_plist *lst)
 		   	s[*i] == 'C' || s[*i] == 's' || s[*i] == 'a' || s[*i] == 'A' ||
 			s[*i] == 'e' || s[*i] == 'E' || s[*i] == 'f' || s[*i] == 'F' ||
 			s[*i] == 'g' || s[*i] == 'G' || s[*i] == 'S' || s[*i] == 'p' ||
-			s[*i] == 'n' || s[*i] == 'D' || s[*i] == '%' || s[*i] == 'O' ||
-			(s[*i] == 'U' && (lst->size = 'l'))) && (lst->type = s[*i]))
+			s[*i] == 'n' || (s[*i] == 'D' && (lst->size = 'l')) || s[*i] == '%' || (s[*i] == 'O' &&
+			(lst->size = 'l')) || (s[*i] == 'U' && (lst->size = 'l'))) && (lst->type = s[*i]))
 		return (++*i);
 	else if ((lst->type = 'h'))
 		return (*i);
@@ -94,7 +104,7 @@ int 	correct(char *s, int i, t_plist *lst, va_list *argptr) // к хуям не�
 		t = i;
 	if (s[i] == '-' || s[i] == '+' || s[i] == ' ' || s[i] == '#' || s[i] == '0')
 		i += flags(&s[i], lst);
-	if ((s[i] > 47 && s[i] < 58) || s[i] == '*')
+	if ((s[i] > 48 && s[i] < 58) || s[i] == '*')
 		i += width(&s[i], lst, argptr);
 	if (s[i] == '.')
 		i += preci(&s[i], lst, argptr);

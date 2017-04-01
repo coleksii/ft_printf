@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 12:56:20 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/29 19:20:46 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/31 19:08:39 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char		*ft_base(t_plist *lst, va_list *argptr)
 	}
 	else if (lst->type == 'p')
 	{
-		l = (unsigned long int)va_arg(*argptr, void *); 
+		l = (uintmax_t)va_arg(*argptr, void *); 
 		lst->str = ft_itoa_base_p(l, 16, lst);
 	}
 	return (NULL);

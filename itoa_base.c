@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 13:46:03 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/28 18:35:24 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/31 18:21:21 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char    *ft_itoa_base_big(uintmax_t nbr, unsigned int b, t_plist *lst)
 	while (n)
 	{
 		no[--i + pre] = ((n % 16 + 48) > '9') ? n % 16 + b : n % 16 + 48;
-	   	(n = n / 16);
+	   	n = n / 16;
 	}
 	while (pre--)
 		no[i + pre] = 48;
@@ -68,7 +68,7 @@ char	*ft_itoa_base_o(uintmax_t nbr, unsigned int base, t_plist *lst)
 	pre = (pre >= 0) ? pre : 0;
 	if (lst->hash && nbr)
 		i++;
-	if (lst->hash && lst->prec > i)
+	if (lst->hash && lst->prec > i && nbr)
 		pre--;
 	no = (char *)malloc(i + pre + 1);
 	no[i + pre] = '\0';

@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 19:28:58 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/29 19:15:19 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/04/01 16:06:11 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 # define UKRAINE {\
@@ -27,10 +27,10 @@ int main()
 	d = 499;
 	o = 0x7ffc2f868ee0;
 	UKRAINE
-
-	y = printf("{%3*c}", 0, 0);
+	setlocale(LC_ALL, "");
+	y = printf("%C", L'ÏM-^ZM-^T');
 	printf("\norigin = %d\n", y);
-	y = ft_printf("{%3*c}", 0, 0);
+	y = ft_printf("%C", L'ÏM-^ZM-^T');
 	printf("\nmy = %d\n", y);
 	return (0);
 }

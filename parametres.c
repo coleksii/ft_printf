@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 13:02:29 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/29 18:27:42 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/03/31 20:59:40 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	function(t_plist *lst, va_list *argptr, int i)
 {
-	t_p	farg[24];
+	t_p	farg[26];
 
 	farg[0] = decemical;
 	farg[1] = decemical;
@@ -24,10 +24,10 @@ void	function(t_plist *lst, va_list *argptr, int i)
 	farg[6] = ft_base;
 	farg[7] = ft_base;
 	farg[8] = fft_putchar;
-	farg[9] = fft_putchar;
+	farg[9] = fft_putchar_C;
 	farg[10] = fft_putstr;
 	farg[18] = u_decemical;
-	farg[19] = fft_putstr;
+	farg[19] = fft_putstr_S;
 	farg[20] = ft_base;
 	farg[23] = ft_base_o;
 	farg[i](lst, argptr);
@@ -40,7 +40,7 @@ int		parametres(t_plist *lst, va_list *argptr)
 	
 	s = "dDioumxXcCsaAeEfFgUSpniO";
 	i = 0;
-	if (lst->prec != -2  && (lst->type != 'c' && lst->type != 'C'))
+	if (lst->prec != -2  && (lst->type != 'c' && lst->type != 'C' && lst->type != 's' && lst->type != 'S' && lst->type != 'h'))
 	   lst->nul = 0;
 	if (lst->type == '%')
 	{
