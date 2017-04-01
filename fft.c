@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/07 18:17:51 by coleksii          #+#    #+#             */
-/*   Updated: 2017/04/01 16:03:05 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/04/01 19:52:21 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char		*fft_putstr_S(t_plist *lst, va_list *argptr)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		l += ft_w_char(s[i], &lst->str[l]);
+		l += ft_w_char(s[i], &lst->str[l], &lst->prec);
 		i++;
 	}
 	return (NULL);
@@ -47,10 +47,12 @@ char		*fft_putstr_S(t_plist *lst, va_list *argptr)
 char		*fft_putchar_C(t_plist *lst, va_list *argptr)
 {
 	int	d;
+	int l;
 
+	l = -2;
 	d = va_arg(*argptr, int);
 	lst->str = (char *)malloc(sizeof(d));
-	ft_w_char(d, lst->str);
+	ft_w_char(d, lst->str, &l);
 	return(NULL);
 }
 

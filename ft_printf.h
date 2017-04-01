@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:57:09 by coleksii          #+#    #+#             */
-/*   Updated: 2017/04/01 15:56:53 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/04/01 19:47:00 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char    *ft_itoa_base_o(uintmax_t nbr, unsigned int base, t_plist *lst);
 char        *ft_base_o(t_plist *lst, va_list *argptr);
 char        *ft_base_x(t_plist *lst, va_list *argptr);
 char        *fft_putchar_C(t_plist *lst, va_list *argptr);
-int     ft_w_char(int d, char *s);
+int     ft_w_char(int d, char *s, int *p);
 char        *fft_putstr_S(t_plist *lst, va_list *argptr);
 int     count_w(wchar_t *s);
 

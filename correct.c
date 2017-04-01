@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 18:00:57 by coleksii          #+#    #+#             */
-/*   Updated: 2017/03/30 16:56:14 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/04/01 18:56:00 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		width(char *s, t_plist *lst, va_list *argptr)
 	i = 0;
 	if (s[i] == '*')
 	{
-		lst->width = va_arg(*argptr, unsigned int);
+		lst->width = va_arg(*argptr, int);
 		if (lst->width < 0)
 		{
 			lst->width *= -1;
@@ -66,7 +66,7 @@ int		preci(char *s, t_plist *lst, va_list *argptr)
 	{
 		lst->prec = va_arg(*argptr, unsigned int);
 		if (lst->prec < 0)
-			lst->prec *= -1;
+			lst->prec = -2;
 		return (2);
 	}
 	if (s[i] < 47 && s[i] >= 58 && (lst->prec = 0))
@@ -84,8 +84,8 @@ int		type(char *s, int *i, t_plist *lst)
 		   	s[*i] == 'C' || s[*i] == 's' || s[*i] == 'a' || s[*i] == 'A' ||
 			s[*i] == 'e' || s[*i] == 'E' || s[*i] == 'f' || s[*i] == 'F' ||
 			s[*i] == 'g' || s[*i] == 'G' || s[*i] == 'S' || s[*i] == 'p' ||
-			s[*i] == 'n' || (s[*i] == 'D' && (lst->size = 'l')) || s[*i] == '%' || (s[*i] == 'O' &&
-			(lst->size = 'l')) || (s[*i] == 'U' && (lst->size = 'l'))) && (lst->type = s[*i]))
+			s[*i] == 'n' || (s[*i] == 'D' && (lst->size = 3)) || s[*i] == '%' || (s[*i] == 'O' &&
+			(lst->size = 3)) || (s[*i] == 'U' && (lst->size = 3))) && (lst->type = s[*i]))
 		return (++*i);
 	else if ((lst->type = 'h'))
 		return (*i);
