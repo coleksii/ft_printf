@@ -6,7 +6,7 @@
 /*   By: coleksii <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/07 18:17:51 by coleksii          #+#    #+#             */
-/*   Updated: 2017/04/01 19:52:21 by coleksii         ###   ########.fr       */
+/*   Updated: 2017/04/01 20:51:22 by coleksii         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ char		*fft_putstr_S(t_plist *lst, va_list *argptr)
 	int		l;
 
 	s = va_arg(*argptr, wchar_t *);
+	if (s == NULL)
+	{
+		lst->str = "(null)";
+		return (NULL);
+	}
 	i = 0;
 	l = 0;
 	i = count_w(s);
