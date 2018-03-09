@@ -1,9 +1,13 @@
 # ft_printf
 
 training project, which recode original printf.
+
 With such parametres as %c, %C, %s, %S, %i, %D, %d, %x, %X, %o, %O, %p, %n and additional %b - convert to binary code
+
 Have that long modifier: l, ll, h, hh.
+
 Work wiht widh-parametres and precision and such modifiers like #, +, -, 0
+
 
 ## Examples
 ft_printf("%c", 'c') - print simple "c"
