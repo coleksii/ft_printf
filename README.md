@@ -1,6 +1,6 @@
 # ft_printf
 
-training project, which recode original printf.
+Training project, which recode original printf.
 
 With such parametres as %c, %C, %s, %S, %i, %D, %d, %x, %X, %o, %O, %p, %n and additional %b - convert to binary code
 
